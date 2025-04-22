@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% comment %} {% include '_navbar.html' %} {% endcomment %}
+{% load static %}
+{% comment %} {% block title %} <h1>RSY Hotel Booking - Home</h1> {% endblock %} {% endcomment %}
+{% block header %}
+<h1 class="text-center">RSY Hotel</h1> {% endblock %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+{% comment %} {% endblock %} {% endcomment %}
+{% comment %} {% include '_navbar.html' %} {% endcomment %}
+
+{% comment %} {% include 'loan.html' %} {% endcomment %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking - Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .carousel-item img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .loan-item {
+            color: blue; /* Set text color for loan items */
+        }
+    </style>
+    
+        {% comment %} <h2 class="mt-5">Contact Us</h2>
+        <p>If you have any questions or need assistance, please contact us at: x5050</p>
+        <p>Or visit our <a href="https://www.rsyhotel.com">website</a> for more information.</p
+            <p>Follow us on social media:</p> {% endcomment %}
+        {% comment %} <ul>
+            <li><a href="https://www.facebook.com/rsyhotel">Facebook</a></li>
+            <li><a href="https://www.instagram.com/rsyhotel">Instagram</a></li>
+            <li><a href="https://www.twitter.com/rsyhotel">Twitter</a></li>
+            <li><a href="https://www.linkedin.com/company/rsyhotel">LinkedIn</a></li>
+        </ul> {% endcomment %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <scrip src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    {% include '_footer.html'%}
+    </body>
+</head>
+</html>
+{% endblock %}
+
+           

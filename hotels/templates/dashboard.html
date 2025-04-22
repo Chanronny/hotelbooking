@@ -1,0 +1,58 @@
+<!-- dashboard.html -->
+{% extends 'base.html' %} {% load humanize %} 
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {background-image:url();}
+        .room-image {
+            max-height: 200px;
+            margin-bottom: 10px;
+        }
+
+        .room-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px; /* Space between room sections */
+        }
+
+        .room-info {
+            margin-left: 20px; /* Space between image and form */
+        }
+    </style>
+    <style>
+      .container1 {background-color:powderblue}
+    </style>
+</head>
+<section id="team" class="py-5">
+    <div class="container1">
+      <h2 class="text-center">Payment Details</h2>
+      <div class="row text-left">
+        {% for payment in payments %}
+        <div class="col-md-4">
+          <h4>Full Name : {{ payment.fullName }}</h4>
+          <h4>Email : {{ payment.email }}</h4>
+          {% if payment.roomType == 'singleRoom' %}
+          <h4>Standard Single Bed Room</h4>
+          {% elif payment.roomType == 'doubleRoom' %}
+          <h4>Standard Double Bed Room</h4>
+          {% elif payment.roomType == 'twinRoom' %}
+          <h4>Superior Twin Bed Room</h4>
+          {% elif payment.roomType == 'kingRoom' %}
+          <h4>Superior King Bed Room</h4>
+          {% endif %}
+          <h4>No. of Rooms : {{ payment.numberOfRooms }}</h4>
+          <h4>Check In Date : {{ payment.checkInDate }}</h4>
+          <h4>Check Out Date : {{ payment.checkOutDate }}</h4>
+          <h4>Total Price : {{ payment.totalPrice | intcomma }}</h4>
+          <hr/>
+        </div>
+        {% endfor %} 
+      </div>
+    </div>
+  </section>  
+            {% endblock %}              

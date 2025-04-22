@@ -1,0 +1,77 @@
+<!-- dashboard.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include '_topbar.html' %}
+    {% include '_navbar.html' %}
+    
+    <div class="container">
+        <h2>Your Dashboard</h2>
+        <h4>Upcoming Bookings</h4>
+        {% if bookings %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Check-in Date</th>
+                        <th>Check-out Date</th>
+                        <th>Room Type</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for booking in bookings %}
+                        <tr>
+                            <td>{{ booking.full_name }}</td>
+                            <td>{{ booking.email }}</td>
+                            <td>{{ booking.check_in_date }}</td>
+                            <td>{{ booking.check_out_date }}</td>
+                            <td>{{ booking.room_type }}</td>
+                            <td>{{ booking.status }}</td>
+                            <td>
+                                <a href="{% url 'booking_details' booking.id %}" class="btn btn-info">View</a>
+                                <a href="{% url 'cancel_booking' booking.id %}" class="btn btn-danger">Cancel</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>You have no upcoming bookings.</p>
+        {% endif %}
+        
+        <h4>Past Bookings</h4>
+        {% if past_bookings %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Check-in Date</th>
+                        <th>Check-out Date</th>
+                        <th>Room Type</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for booking in past_bookings %}
+                        <tr>
+                            <td>{{ booking.full_name }}</td>
+                            <td>{{ booking.full_name }}</td>
+                            <td>{{ booking.check_in_date }}</td>
+                            <td>{{ booking.check_out_date }}</td>
+                            <td>{{ booking.room_type }}</td>
+                            <td>{{ booking.status }}</td>
+                            <td>
+                                <a href="{% url 'booking_details' booking.id %}" class="btn btn-info">View</a>
+                                <a href="{% url 'cancel_booking' booking.id %}" class="btn btn-danger">Cancel</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>You have no upcoming bookings.</p>
+        {% endif %}

@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSY Hotel Booking</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* To place logo on the right */
+            align-items: center; /* Vertically center items */
+            padding: 10px 20px; /* Padding for the navigation bar */
+            background-color: #ffffff; /* Background color of navbar */
+        }
+
+        .logo img {
+            height: 100px; /* Adjust height as needed */
+        }
+        
+        .navbar-custom {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: shadow for the navbar */
+        }
+    </style>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-none bg-none">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'home' %}">RSY Hotel Booking</a> <!-- Adjust 'home' to your homepage URL name -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a> <!-- Adjust 'home' -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'room_types' %}">Room Types</a> <!-- Adjust 'home' -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'facility' %}">Facilities</a> <!-- Adjust 'facilities' to your facility page URL name -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'amenity' %}">Amenities</a> <!-- Adjust 'amenities' to your amenity page URL name -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'loan' %}">Loan Items</a> <!-- Adjust 'loan items' to your loan item page URL name -->
+                </li>
+                    <a class="nav-link" href="{% url 'about' %}">About</a> <!-- Adjust 'about' to your about page URL name -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">Register</a> <!-- Adjust 'register' -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a> <!-- Adjust 'login' -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a> <!-- Adjust 'logout' -->
+                </li>
+            </ul>
+            <a class="btn btn-primary" href="{% url 'booking_form' %}" role="button">Book Now</a> <!-- Adjust 'booking_form' to your actual booking form URL name -->
+        </div>
+    </div>
+</nav>
+
+<body>
+    <nav class="navbar navbar-custom">
+        <div class="container">
+            <div>
+                <h1 class="navbar-brand">RSY Hotel Booking</h1>
+            </div>
+            <div class="logo">
+                <img src="{% static 'admin/img/hotel_logo.png' %}" alt="Hotel Logo">
+            </div>
+        </div>
+    </nav>
+    <a class="btn btn-primary" href="{% url 'booking_form' %}" role="button">Book Now</a> <!-- Adjust 'booking_form' to your actual booking form URL name -->
+    <script src="https://code.jquery.com/jquery-3.5.2.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

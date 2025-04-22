@@ -1,0 +1,57 @@
+
+<!-- about.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    {% comment %} {% include '_topbar.html' %} {% endcomment %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Booking Form</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <style>
+            body {background-image:url();}
+            .room-image {
+                max-height: 200px;
+                margin-bottom: 10px;
+            }
+    
+            .room-container {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px; /* Space between room sections */
+            }
+    
+            .room-info {
+                margin-left: 20px; /* Space between image and form */
+            }
+        </style>
+    </head>
+<body style="background-color:powderblue;">
+    <div>
+    <div class="container"></div>
+        <h2>About Us</h2>
+        <p>
+         Welcome to our RSY hotel, where comfort meets elegance. We take pride in offering top-notch services and facilities to make your stay memorable.</p>
+         <p>
+         Founded in 2023, our hotel is situated in the heart of the city, providing easy access to popular attractions and business districts.</p>
+         <br/>
+         <h3>Our Mission</h3>
+         <p>
+            To provide exceptional hospitality and outstanding customer service that exceeds our guests’ expectations.
+         </p>
+         <br/>
+        <h3>Services We Offer</h3>
+        <ul class="list-group mb-6">
+            <li class="list-group-item">24/7 Room Service</li>
+            <li class="list-group-item">Complimentary Breakfast</li>
+            <li class="list-group-item">Free Wi-Fi</li>
+            <li class="list-group-item">Luxury Spa Services</li>
+            <li class="list-group-item">Fitness Center</li>
+            <li class="list-group-item">Business Center</li>
+        </ul>
+    </div
+    </div>
+</body>    
+    {% comment %} {% include '_footer.html' %} {% endcomment %}
+{% endblock %}
